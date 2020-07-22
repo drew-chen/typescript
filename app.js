@@ -1,34 +1,17 @@
-// const person: {
-// 	name: string;
-// 	age: number;
-// 	hobbies: string[];
-// 	role: [number, string]; // type tuple
-// } = {
-// 	name: "bob",
-// 	age: 7,
-// 	hobbies: ['basketball', 'badminton'],
-// 	role: [2, 'author'] 
-// }
-var Role;
-(function (Role) {
-    Role[Role["ADMIN"] = 0] = "ADMIN";
-    Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
-    Role[Role["AUTHOR"] = 2] = "AUTHOR";
-})(Role || (Role = {}));
-;
-var person = {
-    name: "bob",
-    age: 7,
-    hobbies: ['basketball', 'badminton'],
-    role: Role.ADMIN
-};
-// person.role[1] = 10;
-// person.role.push('admin'); // allowed for tuple
-console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase()); //TS knows that hobby is a string.
+function combine(input1, input2, resultType) {
+    var result;
+    if ((typeof input1 === "number" && typeof input2 === "number")
+        || resultType === 'num') {
+        result = +input1 + +input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
 }
-if (person.role === Role.ADMIN) {
-    console.log('is admin');
-}
+var combinedAges = combine(20, 50, 'num');
+console.log("num", combinedAges);
+var combinedAgesString = combine('20', '50', 'num');
+console.log("num", combinedAgesString);
+var combinedNames = combine("John", "Fish", 'str');
+console.log("str", combinedNames);
