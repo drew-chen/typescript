@@ -3,10 +3,10 @@ function add(n1: number, n2: number) {
 	return result;
 }
 
-// Returning void is not the same as undefined.
+// Returning 'void' is not the same as 'undefined'.
 function printResult(num: number): void {
 	console.log(num);
-	// An empty return gives return type of undefined, not void.
+	// An empty return gives return type of 'undefined', not 'void'.
 	// return;
 }
 
@@ -21,9 +21,9 @@ combineValues = add;
 // combineValues = printResult;
 
 addAndHandle(10, 20, printResult)
-// TS infers type of argument (number) based on callback Function type defined in addAndHandle.
+// TS infers type of argument ('number') based on callback Function type defined in addAndHandle.
 addAndHandle(10, 20, (result) => {
 	printResult(result + 10)
-	// Function type is void in addAndHandle thus return value will not be used (ie, doesn't matter).
+	// Function type is 'void' in addAndHandle thus return value will not be used (ie, doesn't matter).
 	return 'asdf'
 })

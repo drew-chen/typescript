@@ -7,10 +7,10 @@ function add(n1: number, n2: number, showResult: boolean, phrase: string) {
 		return result
 	}
 }
-
+// Types can be explicit or implicit.
 let num1: number;
 num1 = 5;
-// Types AND values are inferred for consts.
+// Types AND values are inferred for constants.
 const num2 = 9;
 const showResult = true;
 const resultPhrase = 'Result is: '

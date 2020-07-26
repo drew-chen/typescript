@@ -12,6 +12,7 @@
 
 enum Role { ADMIN, READ_ONLY, AUTHOR };
 
+// Types are inferred.
 const person = {
 	name: "bob",
 	age: 7,
