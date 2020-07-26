@@ -25,7 +25,7 @@ const person = {
 console.log(person.name);
 
 for (const hobby of person.hobbies) {
-	console.log(hobby.toUpperCase()); //TS knows that hobby is a string.
+	console.log(hobby.toUpperCase()); // TS knows that hobby is a string.
 }
 
 if (person.role === Role.ADMIN) {

@@ -1,17 +1,19 @@
-function combine(input1, input2, resultType) {
-    var result;
-    if ((typeof input1 === "number" && typeof input2 === "number")
-        || resultType === 'num') {
-        result = +input1 + +input2;
-    }
-    else {
-        result = input1.toString() + input2.toString();
-    }
+function add(n1, n2) {
+    var result = n1 + n2;
     return result;
 }
-var combinedAges = combine(20, 50, 'num');
-console.log("num", combinedAges);
-var combinedAgesString = combine('20', '50', 'num');
-console.log("num", combinedAgesString);
-var combinedNames = combine("John", "Fish", 'str');
-console.log("str", combinedNames);
+function printResult(num) {
+    console.log(num);
+    // return; This gives return type of undefined, not void.
+}
+function addAndHandle(n1, n2, callback) {
+    var result = n1 + n2;
+    callback(result);
+}
+var combineValues; // Param name does not matter.
+combineValues = add;
+// combineValues = printResult; // Wrong function type.
+addAndHandle(10, 20, printResult);
+addAndHandle(10, 20, function (result) {
+    printResult(result + 10);
+});

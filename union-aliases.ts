@@ -1,6 +1,8 @@
+// Aliases are useful for lengthy types such as unions.
 type Combinable = number | string
 type ConversionDescriptor = 'num' | 'str'
 
+// Don't forget that regular runtime checks can still be used.
 function combine(
   input1: Combinable,
   input2: Combinable,
@@ -11,6 +13,7 @@ function combine(
 	(typeof input1 === "number" && typeof input2 === "number")
 	|| resultType === 'num'
   ) {
+    // Convert to number.
     result = +input1 + +input2;
   } else {
     result = input1.toString() + input2.toString();
