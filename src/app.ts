@@ -57,9 +57,9 @@ about unused local variables and parameters.
 const globalStr = 'a global str';
 
 // "noImplicitReturns" returns is another optional check.
-function implicitReturn(number: number) {
-	let unused = '4'
-	if (number > 0) {
-		return number
-	}
-}
+// function implicitReturn(number: number) {
+// 	let unused = '4'
+// 	if (number > 0) {
+// 		return number
+// 	}
+// }
