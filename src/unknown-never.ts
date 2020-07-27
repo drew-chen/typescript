@@ -20,12 +20,16 @@ userInputAny = 5;
 // Assign userName, a 'string' type, to 5.
 userName = userInputAny
 userName += 5
-// Gives 10! Unlike with 'unknown', there is no compilation error. 
-// 'any' basically disables type checking and should be avoided.
+/*
+Gives 10! Unlike with 'unknown', there is no compilation error. 
+'any' basically disables type checking and should be avoided.
+*/
 console.log(userName)
 
-// This function never produces a return value, not even 'void' or 'undefined.
-// Note: compiler assumes 'void' due to backward compatibility, so be explicit and say 'never'.
+/*
+This function never produces a return value, not even 'void' or 'undefined.
+Note: compiler assumes 'void' due to backward compatibility, so be explicit and say 'never'.
+*/
 function generateError(message: string, code: number): never {
 	// Always crashes so never returns.
 	throw {
@@ -38,5 +42,6 @@ function infiniteLoop(): never {
 	while (true) {}
 }
 
+// Both of the following calls never return.
 // infiniteLoop()
 generateError('An error occured!', 500)

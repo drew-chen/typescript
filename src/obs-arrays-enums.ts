@@ -1,3 +1,5 @@
+// Explicit types here are unneeded.
+
 // const person: {
 // 	name: string;
 // 	age: number;
